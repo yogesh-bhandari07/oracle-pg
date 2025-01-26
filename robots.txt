@@ -1,0 +1,14 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /login/
+Disallow: /wp-admin/
+Disallow: /cart/
+Disallow: /checkout/
+Disallow: /private/
+
+Allow: /rooms/
+Allow: /about/
+Allow: /contact/
+Allow: /blog/
+
+Sitemap: https://oracleliving.com/sitemap.xml
