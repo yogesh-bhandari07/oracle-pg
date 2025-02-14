@@ -885,6 +885,18 @@ h3 {
     background-image: url(../img/banner/banner3.jpg)
 }
 
+.slider_bg_4 {
+    background-image: url(../img/banner/banner4.jpg)
+}
+
+.slider_bg_5 {
+    background-image: url(../img/banner/banner5.jpg)
+}
+
+.slider_bg_6 {
+    background-image: url(../img/banner/banner6.jpg)
+}
+
 .slider_area .single_slider {
     height: 100vh;
     width: 100vw;
@@ -1283,7 +1295,7 @@ h3 {
 }
 
 .video_bg {
-    background-image: url(../img/video/video.png)
+    background-image: url(../img/video/video.jpg)
 }
 
 .video_area {

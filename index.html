@@ -90,7 +90,7 @@
                       <li><a class="active" href="index.html">home</a></li>
                       <li><a href="rooms.html">rooms</a></li>
                       <li><a href="about.html">About</a></li>
-                      <li><a href="blog.html">Blog</a></li>
+                      <!-- <li><a href="blog.html">Blog</a></li> -->
 
                       <li><a href="contact.html">Contact</a></li>
                     </ul>
@@ -182,6 +182,48 @@
             </div>
           </div>
         </div>
+        <div
+          class="single_slider d-flex align-items-center justify-content-center slider_bg_4"
+        >
+          <div class="container">
+            <div class="row">
+              <div class="col-xl-12">
+                <div class="slider_text text-center">
+                  <h3>Oracle Living</h3>
+                  <p>A Home Away from Home – Safe & Comfortable.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="single_slider d-flex align-items-center justify-content-center slider_bg_5"
+        >
+          <div class="container">
+            <div class="row">
+              <div class="col-xl-12">
+                <div class="slider_text text-center">
+                  <h3>Oracle Living for Girls</h3>
+                  <p>Where Comfort Meets Security for Women.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="single_slider d-flex align-items-center justify-content-center slider_bg_6"
+        >
+          <div class="container">
+            <div class="row">
+              <div class="col-xl-12">
+                <div class="slider_text text-center">
+                  <h3>Oracle Living - Home</h3>
+                  <p>Luxury, Safety & Comfort – All in One Place.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -226,7 +268,7 @@
         <div class="row">
           <div class="col-xl-12">
             <div class="section_title text-center mb-100">
-              <h3>Ongoing Offers</h3>
+              <h3>We are Offering</h3>
             </div>
           </div>
         </div>
@@ -280,13 +322,76 @@
       <div class="video_area_inner text-center">
         <h3>Oracle Living A Home Away from Home</h3>
         <a
-          href="https://www.youtube.com/watch?v=vLnPwxZdW4Y"
-          class="video_btn popup-video"
+          href="javascript:void(0);"
+          class="video_btn"
+          onclick="openFullScreenVideo()"
         >
           <i class="fa fa-play"></i>
         </a>
       </div>
     </div>
+
+    <script>
+      let videoFrame, closeButton;
+
+      function openFullScreenVideo() {
+        // Create iframe for YouTube video
+        videoFrame = document.createElement("iframe");
+        videoFrame.src =
+          "https://www.youtube.com/embed/zpjYy4CDPgI?autoplay=1&mute=1&playsinline=1&enablejsapi=1";
+        videoFrame.style.position = "fixed";
+        videoFrame.style.top = "0";
+        videoFrame.style.left = "0";
+        videoFrame.style.width = "100vw";
+        videoFrame.style.height = "100vh";
+        videoFrame.style.zIndex = "9999";
+        videoFrame.style.border = "none";
+        videoFrame.allowFullscreen = true;
+        videoFrame.id = "ytPlayer";
+
+        // Create close button
+        closeButton = document.createElement("button");
+        closeButton.innerText = "✖ Close Video";
+        closeButton.style.position = "fixed";
+        closeButton.style.top = "20px";
+        closeButton.style.right = "20px";
+        closeButton.style.padding = "10px 15px";
+        closeButton.style.background = "#ff4d4d";
+        closeButton.style.color = "#fff";
+        closeButton.style.border = "none";
+        closeButton.style.fontSize = "16px";
+        closeButton.style.cursor = "pointer";
+        closeButton.style.zIndex = "10000";
+        closeButton.style.borderRadius = "5px";
+        closeButton.onclick = closeFullScreenVideo;
+
+        // Append video and button to body
+        document.body.appendChild(videoFrame);
+        document.body.appendChild(closeButton);
+
+        // Load YouTube API and set playback speed
+        setTimeout(() => {
+          var player = new YT.Player("ytPlayer", {
+            events: {
+              onReady: function (event) {
+                event.target.setPlaybackRate(0.5); // Slow speed 0.5x
+              },
+            },
+          });
+        }, 1000);
+      }
+
+      function closeFullScreenVideo() {
+        if (videoFrame) document.body.removeChild(videoFrame);
+        if (closeButton) document.body.removeChild(closeButton);
+      }
+
+      // Load YouTube API
+      var tag = document.createElement("script");
+      tag.src = "https://www.youtube.com/iframe_api";
+      document.head.appendChild(tag);
+    </script>
+
     <!-- video_area_end -->
 
     <!-- about_area_start -->
@@ -341,7 +446,7 @@
       <div class="rooms_here">
         <div class="single_rooms">
           <div class="room_thumb">
-            <img src="img/rooms/1.png" alt="" />
+            <img src="img/rooms/1.jpg" alt="" height="500" width="600" />
             <div
               class="room_heading d-flex justify-content-between align-items-center"
             >
@@ -354,38 +459,12 @@
         </div>
         <div class="single_rooms">
           <div class="room_thumb">
-            <img src="img/rooms/2.png" alt="" />
+            <img src="img/rooms/2.jpg" alt="" height="500" width="600" />
             <div
               class="room_heading d-flex justify-content-between align-items-center"
             >
               <div class="room_heading_inner">
                 <h3>Deluxe Room</h3>
-              </div>
-              <a href="#" class="line-button">Request a call</a>
-            </div>
-          </div>
-        </div>
-        <div class="single_rooms">
-          <div class="room_thumb">
-            <img src="img/rooms/3.png" alt="" />
-            <div
-              class="room_heading d-flex justify-content-between align-items-center"
-            >
-              <div class="room_heading_inner">
-                <h3>Signature Room</h3>
-              </div>
-              <a href="#" class="line-button">Request a call</a>
-            </div>
-          </div>
-        </div>
-        <div class="single_rooms">
-          <div class="room_thumb">
-            <img src="img/rooms/4.png" alt="" />
-            <div
-              class="room_heading d-flex justify-content-between align-items-center"
-            >
-              <div class="room_heading_inner">
-                <h3>Couple Room</h3>
               </div>
               <a href="#" class="line-button">Request a call</a>
             </div>
